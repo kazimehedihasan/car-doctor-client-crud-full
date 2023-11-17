@@ -5,13 +5,13 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
     // const [services, setServices] = useState([]);
-    const [short, setShort] = useState(true);
+    const [asc, setAsc] = useState(true);
     // useEffect(() => {
     //     fetch('http://localhost:5000/services')
     //         .then(res => res.json())
     //         .then(data => setServices(data));
     // }, [])
-    const services = useServices(short)
+    const services = useServices(asc)
     return (
         <div className="mt-4">
             <div className="text-center">
@@ -19,9 +19,9 @@ const Services = () => {
                 <h2 className="text-5xl">Our Service Area</h2>
                 <p>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which do not look even slightly believable. </p>
 
-                <button onClick={() => setShort(!short)}
+                <button onClick={() => setAsc(!asc)}
                  className="btn bg-orange-200 mt-10">
-               {short ? 'price: High to Low' : 'price : Low to High'}
+               {asc ? 'price: High to Low' : 'price : Low to High'}
                     </button>
 
             </div>

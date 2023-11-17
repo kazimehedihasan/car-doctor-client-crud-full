@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { axiosSecure } from "./useAxiosSecure";
 
 
-const useServices = (short) => {
+const useServices = (asc) => {
     const [services, setServices] = useState([]);
 
  
@@ -12,10 +12,10 @@ const useServices = (short) => {
         //     .then(res => res.json())
         //     .then(data => setServices(data));
 
-            axiosSecure(`/services?shors=${short ? 'short' : 'desc'}`)
+            axiosSecure(`/services?sort=${asc ? 'asc' : 'desc'}`)
             .then(res => setServices(res.data));
 
-    }, [short])
+    }, [asc])
     return services
 };
 
